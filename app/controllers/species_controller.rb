@@ -9,8 +9,8 @@ class SpeciesController < ApplicationController
     render('/species/new.html.erb')
   end
 
-  # def show
-  #   @species = Species.find(params[:id])
-  #   render('/species/')
-  # end
+  def show
+    @species = Species.find(params[:id])
+    render('/species/show')
+  end
 end
