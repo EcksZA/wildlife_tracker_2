@@ -2,5 +2,11 @@
 
 
 <p><a href ="/species/<%= @species.id %>/edit">Edit this species</a></p>
+
+<p><a href="/species/<%= @species.id %>"
+            data-confirm="Are you sure you want to delete this entry?"
+            data-method="delete"
+            rel="nofollow">Delete this species</a></p>
+
 <p><a href="/species">Return to Main Page</a></p>
 

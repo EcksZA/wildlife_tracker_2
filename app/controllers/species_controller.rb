@@ -37,4 +37,10 @@ class SpeciesController < ApplicationController
       render('/species/edit.html.erb')
     end
   end
+
+  def destroy
+    @species = Species.find(params[:id])
+    @species.destroy
+    redirect_to('/species')
+  end
 end
