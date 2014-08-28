@@ -3,7 +3,7 @@
 <h2>Sighting Dates</h2>
 <ul>
   <% @species.sightings.each do |seen| %>
-    <li><%= seen.date %></li>
+    <li><%= seen.date %> | latitude: <%= seen.latitude %> | longitude <%= seen.longitude %></li>
   <% end %>
 </ul>
 
@@ -17,5 +17,5 @@
 
 <p><a href="/species">Return to Main Page</a></p>
 
-<p><a href="/species/<%= @species.id %>/sightings/new">Add New Sighting</a></p>
+<p><a href="/species/<%= @species.id %>/new">Add New Sighting</a></p>
 

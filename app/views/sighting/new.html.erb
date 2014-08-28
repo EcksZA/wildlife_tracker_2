@@ -1,0 +1,18 @@
+<h1>Add New Sighting</h1>
+
+<% if @sighting.errors.any? %>
+  <% @sighting.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+
+<form action='/species/<%= @species.id %>' method='post'>
+  <label for="sighting_date">Date</label>
+  <input id='sighting_date' name='sighting[date]' type='text'>
+  <label for="sighting_latitude">Latitude</label>
+  <input id='sighting_latitude' name='sighting[latitude]' type='text'>
+  <label for="sighting_longitude">Longitude</label>
+  <input id='sighting_longitude' name='sighting[longitude]' type='text'>
+  <input name='sighting[species_id]' type='hidden' value='<%= @species.id %>'>
+  <button>Add Sighting</button>
+</form>
