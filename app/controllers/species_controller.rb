@@ -5,7 +5,17 @@ class SpeciesController < ApplicationController
     render('/species/index.html.erb')
   end
 
+  def create
+    @species = Species.new(params[:species])
+    if @species.save
+      render('/species/success.html.erb')
+    else
+      render('/species/new.html.erb')
+    end
+  end
+
   def new
+    @species = Species.new
     render('/species/new.html.erb')
   end
 
@@ -16,6 +26,6 @@ class SpeciesController < ApplicationController
 
   def edit
     @species = Species.find(params[:id])
-    render('species/edit')
+    render('species/edit.html.erb')
   end
 end
