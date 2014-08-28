@@ -1,5 +1,12 @@
 <h1><%= @species.name %></h1>
 
+<h2>Sighting Dates</h2>
+<ul>
+  <% @species.sightings.each do |seen| %>
+    <li><%= seen.date %></li>
+  <% end %>
+</ul>
+
 
 <p><a href ="/species/<%= @species.id %>/edit">Edit this species</a></p>
 
@@ -9,4 +16,6 @@
             rel="nofollow">Delete this species</a></p>
 
 <p><a href="/species">Return to Main Page</a></p>
+
+<p><a href="/species/<%= @species.id %>/sightings/new">Add New Sighting</a></p>
 

@@ -21,7 +21,7 @@ class SpeciesController < ApplicationController
 
   def show
     @species = Species.find(params[:id])
-    render('/species/show')
+    render('/species/show.html.erb')
   end
 
   def edit
