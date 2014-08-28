@@ -13,4 +13,9 @@ class SpeciesController < ApplicationController
     @species = Species.find(params[:id])
     render('/species/show')
   end
+
+  def edit
+    @species = Species.find(params[:id])
+    render('species/edit')
+  end
 end
