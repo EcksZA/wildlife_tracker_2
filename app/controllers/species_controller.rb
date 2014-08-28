@@ -28,4 +28,13 @@ class SpeciesController < ApplicationController
     @species = Species.find(params[:id])
     render('species/edit.html.erb')
   end
+
+  def update
+    @species = Species.find(params[:id])
+    if @species.update(params[:species])
+      redirect_to('/species')
+    else
+      render('/species/edit.html.erb')
+    end
+  end
 end
